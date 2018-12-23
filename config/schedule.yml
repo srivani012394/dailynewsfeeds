@@ -1,0 +1,4 @@
+cron_hn_crawler:
+  cron: "0 2 * * *"
+  class: "HnCrawlerWorker"
+  queue: cron_fetch_from_hackernews

@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_23_102115) do
+ActiveRecord::Schema.define(version: 2018_12_23_135427) do
+
+  create_table "hackernews_feeds", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.datetime "written_at"
+    t.text "title"
+    t.string "url"
+    t.string "author"
+    t.bigint "keyword_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "hacker_story_id"
+    t.index ["keyword_id"], name: "index_hackernews_feeds_on_keyword_id"
+  end
 
   create_table "keywords", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.string "name"

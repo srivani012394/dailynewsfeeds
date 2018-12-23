@@ -1,0 +1,33 @@
+# Logfile created on 2018-12-23 17:11:11 +0530 by logger.rb/61378
+I, [2018-12-23T17:11:33.146513 #10689]  INFO -- : Net::HTTP::Get: /?query=ai&sort=byDate&prefix&page=0&dateRange=last24h&type=story
+D, [2018-12-23T17:11:33.146903 #10689] DEBUG -- : request-header: accept-encoding => gzip,deflate,identity
+D, [2018-12-23T17:11:33.147032 #10689] DEBUG -- : request-header: accept => */*
+D, [2018-12-23T17:11:33.147122 #10689] DEBUG -- : request-header: user-agent => Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/601.3.9 (KHTML, like Gecko) Version/9.0.2 Safari/601.3.9
+D, [2018-12-23T17:11:33.147204 #10689] DEBUG -- : request-header: accept-charset => ISO-8859-1,utf-8;q=0.7,*;q=0.7
+D, [2018-12-23T17:11:33.147308 #10689] DEBUG -- : request-header: accept-language => en-us,en;q=0.5
+D, [2018-12-23T17:11:33.147395 #10689] DEBUG -- : request-header: host => hn.algolia.com
+I, [2018-12-23T17:11:34.787110 #10689]  INFO -- : status: Net::HTTPOK 1.1 200 OK
+D, [2018-12-23T17:11:34.787415 #10689] DEBUG -- : response-header: date => Sun, 23 Dec 2018 11:41:34 GMT
+D, [2018-12-23T17:11:34.787576 #10689] DEBUG -- : response-header: content-type => text/html; charset=utf-8
+D, [2018-12-23T17:11:34.787718 #10689] DEBUG -- : response-header: transfer-encoding => chunked
+D, [2018-12-23T17:11:34.787847 #10689] DEBUG -- : response-header: connection => keep-alive
+D, [2018-12-23T17:11:34.787988 #10689] DEBUG -- : response-header: set-cookie => __cfduid=dded1c16ffe863478a2173135ffc82f551545565294; expires=Mon, 23-Dec-19 11:41:34 GMT; path=/; domain=.algolia.com; HttpOnly; Secure
+D, [2018-12-23T17:11:34.788206 #10689] DEBUG -- : response-header: x-xss-protection => 1; mode=block
+D, [2018-12-23T17:11:34.788338 #10689] DEBUG -- : response-header: x-content-type-options => nosniff
+D, [2018-12-23T17:11:34.788486 #10689] DEBUG -- : response-header: etag => W/"f4f6de7f302d60e4a085cbd7ebcee30d"
+D, [2018-12-23T17:11:34.788623 #10689] DEBUG -- : response-header: cache-control => max-age=0, private, must-revalidate
+D, [2018-12-23T17:11:34.788763 #10689] DEBUG -- : response-header: x-request-id => a84fda2b-597e-4216-834b-ae611653f493
+D, [2018-12-23T17:11:34.788898 #10689] DEBUG -- : response-header: x-runtime => 0.006090
+D, [2018-12-23T17:11:34.789027 #10689] DEBUG -- : response-header: access-control-allow-origin => *
+D, [2018-12-23T17:11:34.789155 #10689] DEBUG -- : response-header: access-control-allow-methods => GET, PUT, DELETE, POST, OPTIONS
+D, [2018-12-23T17:11:34.789301 #10689] DEBUG -- : response-header: access-control-allow-headers => x-algolia-application-id, connection, origin, x-algolia-api-key, content-type, content-length, x-algolia-signature, x-algolia-usertoken, x-algolia-tagfilters, DNT, X-Mx-ReqToken, Keep-Alive, User-Agent, X-Requested-With, If-Modified-Since, Cache-Control, Authorization, Accept
+D, [2018-12-23T17:11:34.789432 #10689] DEBUG -- : response-header: access-control-allow-credentials => false
+D, [2018-12-23T17:11:34.789559 #10689] DEBUG -- : response-header: content-encoding => gzip
+D, [2018-12-23T17:11:34.789684 #10689] DEBUG -- : response-header: strict-transport-security => max-age=31536000; includeSubDomains; preload
+D, [2018-12-23T17:11:34.789814 #10689] DEBUG -- : response-header: expect-ct => max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"
+D, [2018-12-23T17:11:34.789984 #10689] DEBUG -- : response-header: server => cloudflare
+D, [2018-12-23T17:11:34.790127 #10689] DEBUG -- : response-header: cf-ray => 48da8f4edca2899f-MAA
+D, [2018-12-23T17:11:34.790612 #10689] DEBUG -- : Read 140 bytes (140 total)
+D, [2018-12-23T17:11:34.790905 #10689] DEBUG -- : Read 1310 bytes (1450 total)
+D, [2018-12-23T17:11:34.791533 #10689] DEBUG -- : gzip response
+D, [2018-12-23T17:11:34.819567 #10689] DEBUG -- : saved cookie: __cfduid=dded1c16ffe863478a2173135ffc82f551545565294
