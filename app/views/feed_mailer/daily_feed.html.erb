@@ -1,0 +1,11 @@
+<% #use haml %>
+
+<% @feeds.each do|feed| %>
+  <h5 style="color: red; font-size: 1.5rem;">
+    <%= feed.title %>
+  </h5>
+  <p style="color: blue; font-size: 0.8rem;">
+    <%= feed.url %>
+  </p>
+  <hr/>
+<% end %>
