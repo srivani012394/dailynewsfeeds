@@ -3,8 +3,8 @@ TODAY = Date.today
 module SendMails
   class FeedsMailer
     def self.send_in_batches
-      User.find_each(batch_size: 100) do|user|
-        FeedMailer.daily_feed(user.email).deliver_later if HackernewsFeed.count > 5
+      User.where.not(last_feed_on: TODAY).find_each(batch_size: 100) do|user|
+        FeedMailer.daily_feed(user.email).deliver_later
         user.update(last_feed_on: TODAY)
       end
     end

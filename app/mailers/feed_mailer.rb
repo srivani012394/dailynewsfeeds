@@ -1,7 +1,6 @@
 class FeedMailer < ApplicationMailer
   def daily_feed(email)
-    # @feed = GetFeeds::KeywordSpecific.for_user(email)
-    @feeds = HackernewsFeed.last(5)
+    @feeds = GetFeeds::KeywordSpecific.news_for_user(email)
     mail(to: email, subject: 'You daily digest!')
   end
 end

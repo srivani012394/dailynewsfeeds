@@ -5,4 +5,4 @@ class HnCrawlerWorker
     FetchNews::Hackernews.pullData
   end
 end
-CronHnCrawlerWorker = HnCrawlerWorker
+

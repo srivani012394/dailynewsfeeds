@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_25_160910) do
+ActiveRecord::Schema.define(version: 2018_12_31_192129) do
 
-  create_table "hackernews_feeds", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "hackernews_feeds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci ROW_FORMAT=DYNAMIC", force: :cascade do |t|
     t.datetime "written_at"
-    t.text "title"
+    t.text "title", limit: 16777215
     t.string "url"
     t.string "author"
     t.bigint "keyword_id"
@@ -24,21 +24,52 @@ ActiveRecord::Schema.define(version: 2018_12_25_160910) do
     t.index ["keyword_id"], name: "index_hackernews_feeds_on_keyword_id"
   end
 
-  create_table "keywords", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "keywords", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci ROW_FORMAT=DYNAMIC", force: :cascade do |t|
     t.string "name"
   end
 
-  create_table "seed_migration_data_migrations", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "quora_posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci", force: :cascade do |t|
+    t.string "author"
+    t.text "title"
+    t.string "url"
+    t.bigint "keyword_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["keyword_id"], name: "index_quora_posts_on_keyword_id"
+  end
+
+  create_table "reddit_feeds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci ROW_FORMAT=DYNAMIC", force: :cascade do |t|
+    t.bigint "keyword_id"
+    t.datetime "written_at"
+    t.string "sub_reddit_id"
+    t.text "title", limit: 16777215
+    t.string "url"
+    t.string "author"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["keyword_id"], name: "index_reddit_feeds_on_keyword_id"
+  end
+
+  create_table "seed_migration_data_migrations", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci ROW_FORMAT=DYNAMIC", force: :cascade do |t|
     t.string "version"
     t.integer "runtime"
     t.datetime "migrated_on"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+  create_table "user_keywords", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci ROW_FORMAT=DYNAMIC", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "keyword_id"
+    t.index ["keyword_id"], name: "index_user_keywords_on_keyword_id"
+    t.index ["user_id"], name: "index_user_keywords_on_user_id"
+  end
+
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci ROW_FORMAT=DYNAMIC", force: :cascade do |t|
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "last_feed_on", default: "2018-12-24"
+    t.datetime "confirmed_at"
+    t.string "confirmation_token"
   end
 
 end

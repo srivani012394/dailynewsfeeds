@@ -1,11 +1,25 @@
 <% #use haml %>
 
-<% @feeds.each do|feed| %>
-  <h5 style="color: red; font-size: 1.5rem;">
-    <%= feed.title %>
-  </h5>
-  <p style="color: blue; font-size: 0.8rem;">
-    <%= feed.url %>
-  </p>
-  <hr/>
+<% @feeds.each do |feed| %>
+  <h3 style="color: white; font-size: 1.5rem; text-transform: uppercase; 
+      background: linear-gradient(to right, #3c3b3f, #605c3c);
+    padding: 5px; margin-bottom: 10px; border-radius: 4px; text-align: center;">
+
+    <%= feed[:topic] %>
+
+  </h3>
+
+  <% feed[:news].each do|news| %>
+      <h5 style="color: #9a980c; font-size: 1rem; text-align: justify;
+        font-family: sans-serif; font-weight: 800; margin-bottom: 0px;">
+        <%= news.title %>
+        <span>
+          <a href="<%= news.url%>" style="text-decoration: none; 
+            color: #272790; font-size: 15px; font-weight: 400; font-family: none;">
+            ...Read more
+          </a>
+        </span>
+      </h5>
+    <hr/>
+  <% end %>
 <% end %>

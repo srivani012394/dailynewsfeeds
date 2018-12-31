@@ -1,0 +1,2 @@
+class QuoraPost < ApplicationRecord
+end

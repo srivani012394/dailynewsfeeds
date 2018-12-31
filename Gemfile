@@ -37,17 +37,22 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 # gems added by me
 gem 'seed_migration'
-gem 'mechanize'
+gem 'watir', '~> 6.16', '>= 6.16.5'
 gem 'sidekiq'
 gem 'sidekiq-cron'
-gem 'pry'
+gem 'haml'
+gem 'bootstrap', '~> 4.2.1'
+gem 'jquery-rails'
+
 # #################################################
 group :development, :test do
+  gem 'pry'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
 group :development do
+  gem 'letter_opener_web', '~> 1.0'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'

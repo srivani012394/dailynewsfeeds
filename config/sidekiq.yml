@@ -9,4 +9,6 @@ production:
 queues:
   - default
   - cron_fetch_from_hackernews_at_2am
+  - cron_fetch_from_reddit_at_2:20am
+  - cron_fetch_from_quora_at_2:40am
   - cron_send_daily_feeds_at_5am
