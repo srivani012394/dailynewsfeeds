@@ -1,0 +1,9 @@
+.text-align.sign-in-form
+  = form_for @user do |f|
+    %h2.mb-4.text-center
+      NewsFeed
+    .form-group
+      = f.text_field :email, placeholder: "Enter your email", class: "form-control"
+    .form-group
+      = collection_select :user, :keyword_ids, @keywords, 'id', 'name', {}, multiple: true, class: "form-control" 
+    = f.submit "Subscribe", class: "btn btn-lg btn-primary btn-block"
