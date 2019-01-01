@@ -1,15 +1,16 @@
-
-.text-align.sign-in-form
+.text-align.sign-up-form
   = form_for @user do |f|
     - if @user.errors.any?
       - @user.errors.full_messages.each do |msg|
         .alert.alert-danger.text-center
           = msg
 
-    %h2.mb-4.text-center
+    %h2.mb-4.text-center.form-header
       NewsFeed
     .form-group
+      = f.label "Email"
       = f.text_field :email, placeholder: "Enter your email", class: "form-control"
     .form-group
+      = f.label "Select keywords"
       = collection_select :user, :keyword_ids, @keywords, 'id', 'name', {}, multiple: true, class: "form-control" 
     = f.submit "Subscribe", class: "btn btn-lg btn-primary btn-block"

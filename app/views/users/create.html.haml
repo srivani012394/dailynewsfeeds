@@ -1,11 +1,5 @@
-.user-create-container
-  - if @success.present?
-    .success
-      %p
-        = @success
-  - else
-    .error
-      %p
-        = @errors
-    .create-button
-      = link_to "Create User", new_user_path
+.sign-up-success
+  %h2
+    Subscription under process.
+  %h5
+    Please check your email and complete the confirmation process.

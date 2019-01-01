@@ -1,8 +1,8 @@
-.container
-  - if @error.present?
-    %p
+- if @error.present?
+  .confirm-error
+    %h2
       = @error
-  - else
-    .box
-      %p
-        Thanks for subscribing to our news-letter.
+- else
+  .confirm-success
+    %h2
+      Thanks for subscribing to our news feeds.
