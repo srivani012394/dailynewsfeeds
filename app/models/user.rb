@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :keywords, through: :user_keywords
 
   before_save :generate_confirmation_token
-
+  after_save :send_confirmation_email
   private
 
   def generate_confirmation_token
@@ -14,5 +14,6 @@ class User < ApplicationRecord
   end
 
   def send_confirmation_email
+    UserMailer.confirmation_mail(self).deliver_later
   end
 end

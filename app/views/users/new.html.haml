@@ -1,5 +1,11 @@
+
 .text-align.sign-in-form
   = form_for @user do |f|
+    - if @user.errors.any?
+      - @user.errors.full_messages.each do |msg|
+        .alert.alert-danger.text-center
+          = msg
+
     %h2.mb-4.text-center
       NewsFeed
     .form-group

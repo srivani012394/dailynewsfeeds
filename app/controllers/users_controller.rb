@@ -6,11 +6,12 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(user_params)
-    if user.save
+    @user = User.new(user_params)
+    if @user.save
       @success = "Please check your email to confirm your subscription."
     else
-      @errors = user.errors.messages
+      @keywords = Keyword.all
+      render :new
     end
   end
 
