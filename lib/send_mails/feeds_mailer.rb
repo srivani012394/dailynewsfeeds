@@ -10,4 +10,3 @@ module SendMails
     end
   end
 end
-#where.not(last_feed_on: TODAY)
