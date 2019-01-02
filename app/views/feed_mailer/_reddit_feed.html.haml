@@ -1,0 +1,12 @@
+%h2{style: "text-align: center; background: #5f5e5b; color: white; font-family: sans-serif; font-size: 30px;"}
+  Reddit
+- feeds.each do |feed|
+  - if feed[:news].present?
+    %h3{style: "color: #a96d1d; font-size: 1.5rem; font-weight: 500; margin: 0px;"}
+      = feed[:topic]
+    %hr
+    %ul
+      - feed[:news].each do|news|
+        %li{style: "font-size: 18px; padding: 10px 0px;"}
+          %a{href: news.url, style: "text-decoration: none;"}
+            = news.title

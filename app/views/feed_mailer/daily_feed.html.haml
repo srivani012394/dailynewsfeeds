@@ -1,0 +1,6 @@
+.content
+  = render 'hackernews_feed', feeds: @feeds[:hackernews]
+  %div{style: "padding-bottom: 20px;"}
+  = render 'reddit_feed', feeds: @feeds[:reddit]
+  %div{style: "padding-bottom: 20px;"}
+  = render 'quora_feed', feeds: @feeds[:quora]
