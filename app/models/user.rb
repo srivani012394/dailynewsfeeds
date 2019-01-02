@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   validates_uniqueness_of :email
   has_many :user_keywords, dependent: :destroy
@@ -5,6 +7,7 @@ class User < ApplicationRecord
 
   before_create :generate_confirmation_token
   after_create :send_confirmation_email
+
   private
 
   def generate_confirmation_token

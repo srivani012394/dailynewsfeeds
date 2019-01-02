@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Util
   module HackernewsTools
     def construct_param(hit, keyword_id)

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class HackernewsFeed < ApplicationRecord
   belongs_to :keyword
   validates :url, presence: true
@@ -11,6 +13,4 @@ class HackernewsFeed < ApplicationRecord
   def is_young_enough?
     is_this_story_young?
   end
-
 end
-

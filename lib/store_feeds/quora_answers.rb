@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 include Util::QuoraScrappingTools
 
 module StoreFeeds
@@ -10,7 +12,8 @@ module StoreFeeds
             title: raw_data[:titles][at].text,
             url: raw_data[:anchors][at].href,
             author: extract_name(
-              raw_data[:authors][at].text),
+              raw_data[:authors][at].text
+            ),
             keyword_id: keyword_id
           }
           QuoraPost.create(param)
