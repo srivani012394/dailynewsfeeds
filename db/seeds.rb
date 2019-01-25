@@ -11,6 +11,10 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+ ["rails", "devops", "cloud", "AI"].each do |key|
+ 		Keyword.create(name: key)
+ 	end
+
 ActiveRecord::Base.transaction do
 end
 

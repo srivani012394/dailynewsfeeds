@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   require 'sidekiq/web'
   require 'sidekiq/cron/web'
   mount Sidekiq::Web => '/sidekiq'
+  root to: 'users#new'
   resources :users, only: %i[new create destroy] do
     get :confirm, on: :collection
   end
