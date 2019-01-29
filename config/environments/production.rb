@@ -108,8 +108,8 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
 
   ActionMailer::Base.smtp_settings = {
-    user_name:  ENV['SENDGRID_USERNAME'],
-    password: ENV['SENDGRID_PASSWORD'],
+    user_name:  ENV['GMAIL_USER_ID'],
+    password: ENV['GMAIL_PWD'],
     domain: 'gmail.com',
     address: 'smtp.sendgrid.net',
     port: 587,
