@@ -19,5 +19,8 @@ test:
 
 production:
   <<: *default
-  database: newsfeed_production
-  password: <%= ENV['DATABASE_PASSWORD'] %>
+  database: newsfeed_development 
+
+
+
+ 

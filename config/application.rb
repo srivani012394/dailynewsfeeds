@@ -18,5 +18,6 @@ module Newsfeed
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     config.autoload_paths << Rails.root.join('lib')
+    config.secret_key_base = "gbygbygybyvgyvygvb"
   end
 end
