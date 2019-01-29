@@ -30,15 +30,13 @@ class UsersController < ApplicationController
     raise ActiveRecord::RecordNotFound if user.nil?
 
     user.update(confirmed_at: DateTime.now)
-  rescue ActiveRecord::RecordNotFound
-    @error = 'Sorry, but we are not able to find you. Please register again.'
+    rescue ActiveRecord::RecordNotFound
+      @error = 'Sorry, but we are not able to find you. Please register again.'
   end
 
   private
 
   def user_params
-    params
-      .require(:user)
-      .permit(:email, keyword_ids: [])
+    params.require(:user).permit(:email, keyword_ids: [])
   end
 end

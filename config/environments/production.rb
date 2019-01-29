@@ -108,11 +108,11 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
 
   ActionMailer::Base.smtp_settings = {
-    address: 'smtp.gmail.com',
-    port: 587,
-    domain: "https://dailynewsfeeds.herokuapp.com",
     user_name:  ENV['GMAIL_USER_ID'],
     password: ENV['GMAIL_PWD'],
+    domain: 'gmail.com',
+    address: 'smtp.sendgrid.net',
+    port: 587,
     authentication: 'plain',
     enable_starttls_auto: true
   }  
